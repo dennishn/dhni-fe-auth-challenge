@@ -17,6 +17,14 @@
 			'config',
 			'application',
 			'index',
+			'auth',
+			'login',
+			'signup',
+			'protected',
+			'users',
+			'admins',
+			'shared',
+			'topbar',
 			/* ---> Do not delete this comment (ngImports) <--- */
 	]);
 })();

@@ -19,6 +19,11 @@
 						templateUrl: 'modules/_application/application.template.html',
 						controller: 'Application',
 						controllerAs: 'application'
+					},
+					'topbar@application': {
+						templateUrl: 'modules/_application/topbar/topbar.template.html',
+						controller: 'TopbarController',
+						controllerAs: 'topbar'
 					}
 				}
 			};

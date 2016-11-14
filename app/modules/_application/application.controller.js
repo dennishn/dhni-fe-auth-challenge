@@ -21,6 +21,16 @@
 		function activate() {
 
 		}
+
+		vm.routeDiscovery = [
+			'application.index',
+			'application.auth.login',
+			'application.auth.signup',
+			'application.protected.shared',
+			'application.protected.users',
+			'application.protected.admins'
+		]
+
 	}
 
 })();

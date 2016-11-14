@@ -1,2 +1,6 @@
 <p>This is the application view.</p>
-<div ui-view="application"></div>
+<div ui-view="topbar"></div>
+<div ui-view="page"></div>
+<a ng-repeat="route in application.routeDiscovery" ui-sref="{{route}}">
+    {{route}}
+</a>

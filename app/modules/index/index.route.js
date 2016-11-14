@@ -15,7 +15,7 @@
 				name: 'application.index',
 				url: '/',
 				views: {
-					'application@application': {
+					'page@application': {
 						templateUrl: 'modules/index/index.template.html',
 						controller: 'Index',
 						controllerAs: 'index'
