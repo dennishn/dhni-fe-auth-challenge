@@ -13,6 +13,7 @@
 			'API_ENDPOINTS',
 			'APPLICATION_SETTINGS',
 			'ui.router',
+			'ui.bootstrap',
 			'ngStorage',
 			'config',
 			'application',

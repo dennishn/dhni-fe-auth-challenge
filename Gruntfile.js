@@ -33,7 +33,9 @@ var bowerIgnore = [
 	'angulartics-newrelic-insights',
 	'foundation.js',
 	'waypoints',
-	'sha1'
+	'sha1',
+	'what-input',
+	'jquery'
 ];
 // Since we are writing a new environment file, we remove it from the usemin processing
 var envFile = 'config/environment.js';

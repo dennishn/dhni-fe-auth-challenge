@@ -1,0 +1,28 @@
+[uib-pagination] {
+  @include pagination-container;
+  .active a {
+    @include pagination-item-current;
+  }
+
+  .disabled {
+    @include pagination-item-disabled;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .disabled a {
+    color: inherit;
+    display: block;
+    padding: 0;
+    border-radius: 0;
+    &:hover {
+      background-color: inherit;
+      cursor: inherit;
+    }
+  }
+
+  .ellipsis::after {
+    @include pagination-ellipsis;
+  }
+}

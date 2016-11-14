@@ -1,0 +1,24 @@
+[uib-dropdown] .dropdown-menu {
+  display: none;
+  visibility: visible;
+
+  min-width: $dropdownmenu-min-width;
+
+  position: absolute;
+  background: $dropdownmenu-background;
+  border: $dropdownmenu-border;
+}
+[uib-dropdown].open .dropdown-menu {
+  display: block;
+}
+[uib-dropdown-menu] {
+  visibility: visible;
+}
+
+[uib-dropdown] .dropdown-menu,
+[uib-dropdown-menu] {
+  margin-top: -$global-margin;
+}
+.dropdown.open > .dropdown-pane {
+  display: block;
+}

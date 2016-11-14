@@ -1,0 +1,91 @@
+.button.active {
+  @include button-style(
+                  scale-color($button-background-hover, $lightness: -30%),
+                  scale-color($button-background-hover, $lightness: -45%),
+                  'auto'
+  );
+}
+.button.success.active {
+  @include button-style(
+                  scale-color($success-color, $lightness: -30%),
+                  scale-color($success-color, $lightness: -45%),
+                  'auto'
+  );
+}
+.button.warning.active {
+  @include button-style(
+                  scale-color($warning-color, $lightness: -30%),
+                  scale-color($warning-color, $lightness: -45%),
+                  'auto'
+  );
+}
+.button.alert.active {
+  @include button-style(
+                  scale-color($alert-color, $lightness: -30%),
+                  scale-color($alert-color, $lightness: -45%),
+                  'auto'
+  );
+}
+.button.secondary.active {
+  @include button-style(
+                  scale-color($secondary-color, $lightness: -30%),
+                  scale-color($secondary-color, $lightness: -45%),
+                  'auto'
+  );
+}
+
+.button.hollow.active {
+  background-color: transparent;
+  border-color: scale-color($primary-color, $lightness: -30%);
+  color: scale-color($primary-color, $lightness: -30%);
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: scale-color($primary-color, $lightness: -45%);
+    color: scale-color($primary-color, $lightness: -45%);
+  }
+}
+.button.success.hollow.active {
+  background-color: transparent;
+  border-color: scale-color($success-color, $lightness: -30%);
+  color: scale-color($success-color, $lightness: -30%);
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: scale-color($success-color, $lightness: -45%);
+    color: scale-color($success-color, $lightness: -45%);
+  }
+}
+.button.warning.hollow.active {
+  background-color: transparent;
+  border-color: scale-color($warning-color, $lightness: -30%);
+  color: scale-color($warning-color, $lightness: -30%);
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: scale-color($warning-color, $lightness: -45%);
+    color: scale-color($warning-color, $lightness: -45%);
+  }
+}
+.button.alert.hollow.active {
+  background-color: transparent;
+  border-color: scale-color($alert-color, $lightness: -30%);
+  color: scale-color($alert-color, $lightness: -30%);
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: scale-color($alert-color, $lightness: -45%);
+    color: scale-color($alert-color, $lightness: -45%);
+  }
+}
+.button.secondary.hollow.active {
+  background-color: transparent;
+  border-color: scale-color($secondary-color, $lightness: -30%);
+  color: scale-color($secondary-color, $lightness: -30%);
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: scale-color($secondary-color, $lightness: -45%);
+    color: scale-color($secondary-color, $lightness: -45%);
+  }
+}

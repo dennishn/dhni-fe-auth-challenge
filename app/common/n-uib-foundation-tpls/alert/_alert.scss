@@ -1,0 +1,31 @@
+.callout.alert.success {
+    @include callout-style($success-color);
+}
+.callout.alert.warning {
+  @include callout-style($warning-color);
+}
+.callout.alert.primary {
+  @include callout-style($primary-color);
+}
+.callout.alert.secondary {
+  @include callout-style($secondary-color);
+}
+.callout.alert.default {
+  @include callout-style($white);
+}
+
+.callout.ng-animate {
+  transition: .3s ease-out;
+}
+.callout.ng-enter {
+  opacity: 0;
+}
+.callout.ng-enter-active {
+  opacity: 1;
+}
+.callout.ng-leave {
+  opacity: 1;
+}
+.callout.ng-leave-active {
+  opacity: 0;
+}
