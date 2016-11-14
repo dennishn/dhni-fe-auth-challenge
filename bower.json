@@ -1,0 +1,14 @@
+{
+  "name": "dhni-fe-auth-challenge",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "ngstorage": "~0.3.0",
+    "angular-ui-router": "^0.2.10",
+    "angularfire": "^2.1.0"
+  },
+  "appPath": "app/",
+  "resolutions": {
+    "angular": "^1.5.0"
+  }
+}
