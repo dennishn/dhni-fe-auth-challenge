@@ -1,0 +1,20 @@
+<div class="dhni-avatar">
+    <div class="dhni-avatar__image">
+        <img ng-src="{{$ctrl.user.photoURL}}">
+    </div>
+    <div class="dhni-avatar__user">
+        <p>Hello {{$ctrl.user.displayName}} <strong>({{$ctrl.user.role}})</strong></p>
+    </div>
+    <div class="dhni-avatar__actions">
+        <button class="button small warning"
+                ng-click="$ctrl.toggleRole()"
+                ng-if="$ctrl.user.can('admin')">
+            <span ng-if="$ctrl.user.is('user')">Be an Admin!</span>
+            <span ng-if="$ctrl.user.is('admin')">Be a User!</span>
+        </button>
+
+        <button class="button small"
+                ng-click="$ctrl.onLogout()"
+                ng-if="$ctrl.user">Logout</button>
+    </div>
+</div>

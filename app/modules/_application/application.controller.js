@@ -12,14 +12,28 @@
 		.controller('Application', Application);
 
 	/* @ngInject */
-	function Application() {
+	function Application($scope, $state, feAuthenticationService) {
 		/*jshint validthis: true */
 		var vm = this;
 
-		activate();
+		vm.logout = logout;
 
-		function activate() {
+		$scope.$watch(function () {
+			return feAuthenticationService.getUser();
+		}, function (user) {
+			vm.user = user;
+		});
 
+		function logout() {
+			feAuthenticationService.signOut()
+				.then(function() {
+					console.info('User Signed out');
+					vm.authObj = null;
+					$state.go('application.index');
+				})
+				.catch(function(e) {
+					console.error(e);
+				});
 		}
 
 	}

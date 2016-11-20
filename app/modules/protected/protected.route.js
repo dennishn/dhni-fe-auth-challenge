@@ -21,6 +21,11 @@
 						controller: 'ProtectedController',
 						controllerAs: 'protected'
 					}
+				},
+				resolve: {
+					canActivate: function(feAuthenticationService) {
+						return feAuthenticationService.requireSignIn();
+					}
 				}
 			};
 

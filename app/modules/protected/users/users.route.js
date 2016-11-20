@@ -20,6 +20,11 @@
 						controller: 'UsersController',
 						controllerAs: 'users'
 					}
+				},
+				resolve: {
+					canActivate: function(feAuthenticationService) {
+						return feAuthenticationService.requireRole('user');
+					}
 				}
 			};
 

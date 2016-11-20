@@ -1,1 +1,53 @@
-<topbar></topbar>
+<div class="dhni-topbar">
+    <div class="dhni-topbar__left">
+        <a class="dhni-topbar__title" ui-sref="{{application.user ? 'application.protected.shared' : 'application.index'}}">
+            dhni-fe-auth-challenge
+        </a>
+    </div>
+
+    <div class="dhni-topbar__right">
+        <div class="dhni-topbar__group">
+            <ul class="menu" ng-if="!application.user">
+                <li ui-sref-active="active">
+                    <a ui-sref="application.index">Home</a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="application.auth.login">
+                        <small>Login</small>
+                    </a>
+                </li>
+                <li>
+                    <small>Or</small>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="application.auth.signup">
+                        <small>Sign Up</small>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="menu" ng-if="application.user">
+                <li ui-sref-active="active">
+                    <a ui-sref="application.protected.shared">
+                        Shared
+                    </a>
+                </li>
+
+                <li ui-sref-active="active" ng-if="application.user.is('user')">
+                    <a ui-sref="application.protected.users">
+                        Users
+                    </a>
+                </li>
+
+                <li ui-sref-active="active" ng-if="application.user.is('admin')">
+                    <a ui-sref="application.protected.admins">
+                        Admins
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dhni-topbar__group" ng-if="application.user">
+            <avatar user="application.user" on-logout="application.logout()"></avatar>
+        </div>
+    </div>
+</div>

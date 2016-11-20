@@ -1,1 +1,42 @@
-<p>This is the login view.</p>
+<div class="row">
+    <div class="small-12 columns">
+        <h2>Login</h2>
+    </div>
+    <div class="small-12 columns">
+        <form name="credentialsForm" novalidate ng-submit="auth.signInWithEmailAndPassword()">
+            <div class="row">
+                <div class="small-12 columns">
+                    <label for="email">
+                        E-mail
+                        <input id="email" name="email" type="email" ng-model="auth.user.email" required>
+                    </label>
+                </div>
+                <div class="small-12 columns">
+                    <label for="password">
+                        Password
+                        <input id="password" name="password" type="password" ng-model="auth.user.password" required>
+                    </label>
+                </div>
+                <div class="small-12 columns">
+                    <input id="remember" name="remember" type="checkbox" ng-model="auth.remember" required>
+                    <label for="remember">
+                        Remember?
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-3 medium-offset-3 columns">
+                    <a ui-sref="application.auth.signup" class="button secondary hollow expanded">
+                        Create new user
+                    </a>
+                </div>
+                <div class="small-12 medium-3 columns">
+                    <button class="button expanded" type="submit">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="small-12 medium-6 medium-offset-3 columns">
+        <button class="button expanded" ng-click="auth.signInWithFacebook()">Login in with Facebook</button>
+    </div>
+</div>

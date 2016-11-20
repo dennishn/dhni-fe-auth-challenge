@@ -20,6 +20,11 @@
 						controller: 'AdminsController',
 						controllerAs: 'admins'
 					}
+				},
+				resolve: {
+					canActivate: function(feAuthenticationService) {
+						return feAuthenticationService.requireRole('admin');
+					}
 				}
 			};
 

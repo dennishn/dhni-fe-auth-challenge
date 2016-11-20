@@ -25,6 +25,14 @@
 						controller: 'TopbarController',
 						controllerAs: 'topbar'
 					}
+				},
+				resolve: {
+					// user: function(feAuthenticationService) {
+					// 	return feAuthenticationService.waitForAuthentication()
+					// 		.then(function(user) {
+					// 			return user;
+					// 		});
+					// }
 				}
 			};
 

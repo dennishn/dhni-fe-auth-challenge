@@ -1,3 +1,42 @@
-.topbar {
+.dhni-topbar {
+  @include top-bar-container;
 
+  display: flex;
+}
+
+.dhni-topbar__left,
+.dhni-topbar__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dhni-topbar__left {
+  flex: 0 0 auto;
+  padding-right: $topbar-padding;
+}
+
+.dhni-topbar__right {
+  flex: 1 0 auto;
+  padding-left: $topbar-padding;
+}
+
+.dhni-topbar__group {
+  &:first-of-type:last-of-type {
+    margin-left: auto;
+  }
+
+  button,
+  .button {
+    margin-bottom: 0;
+  }
+}
+
+.dhni-topbar__title {
+  font-weight: bold;
+
+  color: inherit;
+  &:hover, &focus, &:active {
+    color: inherit;
+  }
 }

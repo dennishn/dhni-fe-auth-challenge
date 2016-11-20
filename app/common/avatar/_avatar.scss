@@ -1,0 +1,20 @@
+avatar, [avatar] {
+  display: inline-block;
+}
+.dhni-avatar {
+  display: flex;
+  align-items: center;
+}
+.dhni-avatar__image {
+  width: 30px;
+  height: 30px;
+}
+.dhni-avatar__user {
+  padding: 0 $topbar-padding;
+  p {
+    margin-bottom: 0;
+  }
+}
+.dhni-avatar__actions {
+
+}

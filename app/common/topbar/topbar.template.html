@@ -5,13 +5,15 @@
 
     <div>
         <div class="top-bar-right">
-            <ul class="menu">
-                <li ng-repeat="route in $ctrl.routeDiscovery" ui-sref-active="active">
-                    <a ui-sref="{{route}}">
-                        {{route}}
-                    </a>
-                </li>
-            </ul>
+            <avatar></avatar>
+            <button class="button" ng-click="application.logout()">Logout</button>
+            <!--<ul class="menu">-->
+                <!--<li ng-repeat="route in $ctrl.routeDiscovery" ui-sref-active="active">-->
+                    <!--<a ui-sref="{{route}}">-->
+                        <!--{{route}}-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
         </div>
     </div>
 </div>
