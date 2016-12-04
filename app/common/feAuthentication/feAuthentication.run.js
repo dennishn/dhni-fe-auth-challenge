@@ -20,10 +20,11 @@
 
 		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 
-			if(feAuthenticationSessionService.isTokenExpired()) {
+			if(feAuthenticationSessionService.isTokenExpired() && feAuthenticationService.getUser()) {
+				event.preventDefault();
 				feAuthenticationService.signOut().then(function() {
 					if(_isProtectedState(toState.name)) {
-						$location.url('/');
+						$state.go(_determinePublicState(toState.name), toParams || {});
 					}
 				});
 			}
