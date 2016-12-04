@@ -7,7 +7,10 @@
     "angular-ui-router": "^0.2.10",
     "angularfire": "^2.1.0",
     "foundation-sites": "^6.2.4",
-    "angular-bootstrap": "^2.2.0"
+    "angular-bootstrap": "^2.2.0",
+    "n-form-field": "*",
+    "n-foundation-extras": "*",
+    "n-uib-foundation-tpls": "*"
   },
   "appPath": "app/",
   "resolutions": {
