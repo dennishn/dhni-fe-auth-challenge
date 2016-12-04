@@ -5,3 +5,4 @@ bower_components
 _local.config.js
 .idea
 npm-debug.log
+.grunt
