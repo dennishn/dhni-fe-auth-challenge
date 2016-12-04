@@ -56,7 +56,7 @@
 		function isTokenExpired() {
 
 			if(!$localStorage[FE_AUTHENTICATION_SETTINGS.storagePrefix]) {
-				return true;
+				return false;
 			}
 
 			var now = Date.now();

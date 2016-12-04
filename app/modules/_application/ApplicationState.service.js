@@ -12,11 +12,12 @@
 		.service('ApplicationStateService', ApplicationState);
 
 	/* @ngInject */
-	function ApplicationState($firebaseAuth, $exceptionHandler) {
+	function ApplicationState($exceptionHandler) {
 		/*jshint validthis: true */
 
 		var STATE = {
-			IS_LOADING: false
+			IS_LOADING: false,
+			IS_SUBMITTING: false
 		};
 
 		var service = {
@@ -35,7 +36,7 @@
 		}
 
 		function set(key, value) {
-			if(!key || !value) {
+			if(!angular.isDefined(key) || !angular.isDefined(value)) {
 				throw new $exceptionHandler('[ApplicationState] key and value is required');
 			}
 			if(!STATE.hasOwnProperty(key)) {

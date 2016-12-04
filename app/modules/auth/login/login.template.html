@@ -3,40 +3,98 @@
         <h2>Login</h2>
     </div>
     <div class="small-12 columns">
-        <form name="credentialsForm" novalidate ng-submit="auth.signInWithEmailAndPassword()">
+        <div uib-alert
+             closable="true"
+             close="auth.error = undefined"
+             ng-show="auth.error"
+             class="callout">
+            <i class="fa fa-exclamation-triangle"></i>
+            {{auth.error.message}}
+        </div>
+    </div>
+    <div class="small-12 columns">
+        <form name="auth.credentialsForm"
+              novalidate
+              ng-submit="auth.signInWithEmailAndPassword(auth.user)">
             <div class="row">
                 <div class="small-12 columns">
-                    <label for="email">
-                        E-mail
-                        <input id="email" name="email" type="email" ng-model="auth.user.email" required>
-                    </label>
+                    <n-form-field is-error="auth.credentialsForm.email.$invalid && auth.credentialsForm.email.$dirty"
+                                  is-loading="auth.isSubmitting">
+                        <label for="email" n-form-field-label>
+                            E-mail
+                            <input name="email"
+                                   n-form-field-input
+                                   id="email"
+                                   type="email"
+                                   ng-disabled="auth.isSubmitting"
+                                   ng-model="auth.user.email"
+                                   required>
+                            <span class="form-error"
+                                  ng-messages="auth.credentialsForm.email.$error"
+                                  role="alert">
+                                <span ng-message="required">required</span>
+                                <span ng-message="email">email</span>
+                            </span>
+                        </label>
+                    </n-form-field>
                 </div>
                 <div class="small-12 columns">
-                    <label for="password">
-                        Password
-                        <input id="password" name="password" type="password" ng-model="auth.user.password" required>
-                    </label>
+                    <n-form-field is-error="auth.credentialsForm.password.$invalid && auth.credentialsForm.password.$dirty"
+                                  is-loading="auth.isSubmitting">
+                        <label for="password" n-form-field-label>
+                            Password
+                            <input name="password"
+                                   n-form-field-input
+                                   id="password"
+                                   type="password"
+                                   ng-disabled="auth.isSubmitting"
+                                   ng-model="auth.user.password"
+                                   required>
+                            <span class="form-error"
+                                  ng-messages="auth.credentialsForm.password.$error"
+                                  role="alert">
+                                <span ng-message="required">required</span>
+                            </span>
+                        </label>
+                    </n-form-field>
                 </div>
                 <div class="small-12 columns">
-                    <input id="remember" name="remember" type="checkbox" ng-model="auth.remember" required>
-                    <label for="remember">
-                        Remember?
-                    </label>
+                    <n-form-field is-loading="auth.isSubmitting">
+                        <input name="remember"
+                               n-form-field-input
+                               id="remember"
+                               type="checkbox"
+                               ng-disabled="auth.isSubmitting"
+                               ng-model="auth.remember">
+                        <label for="remember" n-form-field-label>
+                            Remember
+                        </label>
+                    </n-form-field>
                 </div>
             </div>
             <div class="row">
                 <div class="small-12 medium-3 medium-offset-3 columns">
-                    <a ui-sref="application.auth.signup" class="button secondary hollow expanded">
+                    <a ui-sref="application.auth.signup"
+                       class="button secondary hollow expanded">
                         Create new user
                     </a>
                 </div>
                 <div class="small-12 medium-3 columns">
-                    <button class="button expanded" type="submit">Login</button>
+                    <button class="button expanded"
+                            ng-disabled="auth.credentialsForm.$invalid || auth.isSubmitting"
+                            type="submit">
+                        <span ng-show="auth.isSubmitting"><i class="fa fa-spin fa-circle-o-notch"></i></span>
+                        <span ng-hide="auth.isSubmitting">Login</span>
+                    </button>
                 </div>
             </div>
         </form>
     </div>
     <div class="small-12 medium-6 medium-offset-3 columns">
-        <button class="button expanded" ng-click="auth.signInWithFacebook()">Login in with Facebook</button>
+        <button class="button facebook expanded"
+                ng-disabled="auth.isSubmitting"
+                ng-click="auth.signInWithFacebook()">
+            <span ng-show="auth.isSubmitting"><i class="fa fa-spin fa-circle-o-notch"></i></span>
+            <span ng-hide="auth.isSubmitting">Login with Facebook</span></button>
     </div>
 </div>

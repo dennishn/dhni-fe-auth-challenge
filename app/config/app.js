@@ -14,6 +14,8 @@
 			'APPLICATION_SETTINGS',
 			'ui.router',
 			'ui.bootstrap',
+			'nFormField',
+			'n.ui.foundation.tpls',
 			'ngStorage',
 			'config',
 			'application',

@@ -12,7 +12,7 @@
 		.controller('AuthController', Auth);
 
 	/* @ngInject */
-	function Auth(feAuthenticationService, $state, $log) {
+	function Auth(ApplicationStateService, $scope, feAuthenticationService, $state, $log) {
 		/*jshint validthis: true */
 		var vm = this;
 
@@ -28,39 +28,53 @@
 		vm.signInWithEmailAndPassword = signInWithEmailAndPassword;
 		vm.signUpWithEmailAndPassword = signUpWithEmailAndPassword;
 
+		$scope.$watch(function formPendingSubscriber() {
+			return ApplicationStateService.get('IS_SUBMITTING');
+		}, function formPendingSubscription(isSubmitting) {
+			vm.isSubmitting = isSubmitting;
+		});
+
 		function signInWithFacebook() {
+			ApplicationStateService.set('IS_SUBMITTING', true);
+
 			feAuthenticationService.signIn('facebook', true)
-				.then(function(user) {
-					$log.info('User Signed in through Facebook', user);
-					$state.go('application.protected.shared');
-				})
-				.catch(function(e) {
-					console.error(e);
-				});
+				.then(_signInSucces)
+				.catch(_signInError)
+				.finally(_signInFinally);
 		}
 
-		function signInWithEmailAndPassword() {
-			feAuthenticationService.signIn('credentials', vm.remember, vm.user)
-				.then(function(user) {
-					$log.info('User Signed in through Credentials', user);
-					$state.go('application.protected.shared');
-				})
-				.catch(function(e) {
-					console.error(e);
-				});
+		function signInWithEmailAndPassword(user) {
+			ApplicationStateService.set('IS_SUBMITTING', true);
+
+			feAuthenticationService.signIn('credentials', vm.remember, user)
+				.then(_signInSucces)
+				.catch(_signInError)
+				.finally(_signInFinally);
 		}
 
-		function signUpWithEmailAndPassword() {
-			feAuthenticationService.signUp(vm.user)
-				.then(function(user) {
-					console.info('User Created', user);
-				})
-				.catch(function(e) {
-					console.error(e);
-				});
+		function signUpWithEmailAndPassword(user) {
+			ApplicationStateService.set('IS_SUBMITTING', true);
+
+			feAuthenticationService.signUp(user)
+				.then(_signInSucces)
+				.catch(_signInError)
+				.finally(_signInFinally);
 		}
 
-		// TODO: Handle Signin/Out callbacks shared
+		function _signInSucces(user) {
+			$state.go('application.protected.shared');
+		}
+
+		function _signInError(error) {
+			vm.error = error;
+			vm.user = {};
+			vm.credentialsForm.$setUntouched();
+			vm.credentialsForm.$setPristine();
+		}
+
+		function _signInFinally() {
+			ApplicationStateService.set('IS_SUBMITTING', false);
+		}
 
 	}
 

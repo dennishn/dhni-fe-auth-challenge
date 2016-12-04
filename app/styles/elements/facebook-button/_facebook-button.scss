@@ -1,0 +1,4 @@
+.button.facebook,
+button.facebook {
+  @include button-style($facebook, auto, auto);
+}

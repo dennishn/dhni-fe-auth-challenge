@@ -34,8 +34,7 @@ var bowerIgnore = [
 	'foundation.js',
 	'waypoints',
 	'sha1',
-	'what-input',
-	'jquery'
+	'what-input'
 ];
 // Since we are writing a new environment file, we remove it from the usemin processing
 var envFile = 'config/environment.js';
