@@ -42,6 +42,8 @@
 
 @import 'bower_components/foundation-sites/scss/util/util';
 
+@import "bower_components/open-color/open-color.scss";
+
 // 1. Global
 // ---------
 
@@ -49,18 +51,18 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-        primary: #2199e8,
-        secondary: #777,
-        success: #3adb76,
-        warning: #ffae00,
-        alert: #ec5840,
+        primary: $oc-indigo-4,
+        secondary: $oc-gray-7,
+        success: $oc-green-5,
+        warning: $oc-orange-5,
+        alert: $oc-red-5,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
-$body-background: $white;
+$light-gray: $oc-gray-2;
+$medium-gray: $oc-gray-4;
+$dark-gray: $oc-gray-6;
+$black: $oc-gray-9;
+$white: #ffffff;
+$body-background: $oc-gray-0;
 $body-font-color: $black;
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
@@ -68,9 +70,9 @@ $global-margin: 1rem;
 $global-padding: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 0;
+$global-radius: 4px;
 $global-text-direction: ltr;
-$global-flexbox: false;
+$global-flexbox: true;
 $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;

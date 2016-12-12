@@ -2,41 +2,45 @@
   @include top-bar-container;
 
   display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint(medium) {
+    flex-wrap: nowrap;
+  }
 }
 
 .dhni-topbar__left,
 .dhni-topbar__right {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex: 0 0 100%;
+  max-width: 100%;
+
 }
 
 .dhni-topbar__left {
-  flex: 0 0 auto;
-  padding-right: $topbar-padding;
+  @include breakpoint(medium) {
+    flex: 1 1 auto;
+  }
 }
 
 .dhni-topbar__right {
-  flex: 1 0 auto;
-  padding-left: $topbar-padding;
+  @include breakpoint(medium) {
+    flex: 0 1 auto;
+  }
 }
 
 .dhni-topbar__group {
-  &:first-of-type:last-of-type {
-    margin-left: auto;
-  }
-
-  button,
-  .button {
-    margin-bottom: 0;
-  }
 }
 
 .dhni-topbar__title {
-  font-weight: bold;
+}
 
-  color: inherit;
-  &:hover, &focus, &:active {
-    color: inherit;
+.dhni-topbar .menu li {
+  a {
+    background-color: transparent;
+    border-color: transparent;
+    color: $oc-indigo-2;
+  }
+  &.active a {
+    color: $oc-indigo-4;
   }
 }

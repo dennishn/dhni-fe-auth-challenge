@@ -47,7 +47,6 @@
  	External Resources
 */
 
-
 // bower:scss
 @import "bower_components/foundation-sites/scss/foundation.scss";
 // endbower
@@ -66,8 +65,8 @@
 //@include foundation-button-group;
 @include foundation-callout;
 @include foundation-close-button;
-//@include foundation-menu;
-//@include foundation-menu-icon;
+@include foundation-menu;
+@include foundation-menu-icon;
 //@include foundation-drilldown-menu;
 //@include foundation-dropdown;
 //@include foundation-dropdown-menu;
@@ -96,9 +95,9 @@
 
 @import "bower_components/n-uib-foundation-tpls/src/n-uib-foundation-tpls";
 
-/**
+/*
   n-foundation-extras
-**/
+*/
 @import "bower_components/n-foundation-extras/src/n-foundation-extras";
 // Colors
 @include n-foundation-extras-foundation-palette;
@@ -143,7 +142,6 @@
 /* ---> Do not delete this comment (Directives) <--- */
 
 // Components
-@import "../common/topbar/topbar";
 @import "../common/avatar/avatar";
 /* ---> Do not delete this comment (Components) <--- */
 

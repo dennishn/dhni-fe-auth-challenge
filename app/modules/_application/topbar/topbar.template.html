@@ -7,17 +7,12 @@
 
     <div class="dhni-topbar__right">
         <div class="dhni-topbar__group">
+            
             <ul class="menu" ng-if="!application.user">
-                <li ui-sref-active="active">
-                    <a ui-sref="application.index">Home</a>
-                </li>
                 <li ui-sref-active="active">
                     <a ui-sref="application.auth.login">
                         <small>Login</small>
                     </a>
-                </li>
-                <li>
-                    <small>Or</small>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="application.auth.signup">

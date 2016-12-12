@@ -27,7 +27,6 @@
 			'users',
 			'admins',
 			'shared',
-			'topbar',
 			'fe.Authentication',
 			'avatar',
 			/* ---> Do not delete this comment (ngImports) <--- */
